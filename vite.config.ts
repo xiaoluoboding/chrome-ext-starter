@@ -4,9 +4,10 @@ import Vue from '@vitejs/plugin-vue'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import WindiCSS from 'vite-plugin-windicss'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import windiConfig from './windi.config'
 
-const port = parseInt(process.env.PORT || '') || 3303
+const port = parseInt(process.env.PORT || '') || 3309
 const r = (...args: string[]) => resolve(__dirname, ...args)
 
 export default defineConfig(({ command }) => {
@@ -55,6 +56,11 @@ export default defineConfig(({ command }) => {
       // https://github.com/antfu/vite-plugin-windicss
       WindiCSS({
         config: windiConfig,
+      }),
+
+      // https://github.com/intlify/vite-plugin-vue-i18n
+      VueI18n({
+        include: [resolve(__dirname, 'views/locales/**')],
       }),
 
       // rewrite assets to use relative path

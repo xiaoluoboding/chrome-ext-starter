@@ -1,24 +1,26 @@
 <template>
-  <main class="w-[300px] px-4 py-5 text-center text-gray-700">
-    <Logo />
+  <main class="w-[300px] px-4 py-5 text-center text-gray-700 dark:text-gray-200">
+    <carbon-popup class="icon-btn mx-2 text-2xl" />
     <div>Popup</div>
     <p class="mt-2 opacity-50">
-      This is the popup page
+      {{ $t('popup.desc') }}
     </p>
     <button class="btn mt-2" @click="openOptionsPage">
-      Open Options
+      {{ $t('popup.open_options') }}
     </button>
+
+    <Footer />
+
     <div class="mt-2">
-      <span class="opacity-50">Storage:</span> {{ storageDemo }}
+      <span class="opacity-50">{{ $t('popup.storage') }}:</span> {{ storageDemo }}
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { browser } from 'webextension-polyfill-ts'
 import { storageDemo } from '~/logic/storage'
 
 function openOptionsPage() {
-  browser.runtime.openOptionsPage()
+  chrome.runtime.openOptionsPage()
 }
 </script>

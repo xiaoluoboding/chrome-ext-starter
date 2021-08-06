@@ -1,11 +1,12 @@
-# WebExtension Vite Starter
+# Modernized Chrome Extension Vite Starter
 
-A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.chrome.com/docs/extensions/reference/), [FireFox](https://addons.mozilla.org/en-US/developers/), etc.) starter template.
+> A [Vite](https://vitejs.dev/) Powered `Modernized Chrome Extension Manifest V3` ([Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/)) Starter Template.
 
-<p align="center">
-<img width="655" src="https://user-images.githubusercontent.com/11247099/126741643-813b3773-17ff-4281-9737-f319e00feddc.png">
-<img width="655" src="https://user-images.githubusercontent.com/11247099/126741653-43125b62-6578-4452-83a7-bee19be2eaa2.png">
-</p>
+
+| Page Type | Light Mode | Dark Mode |
+| :---: | :---: | :---: |
+| Popup Page | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_popup_light.png) | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_popup_dark.png) |
+| Options Page | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_options_light.png) | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_options_dark.png) |
 
 ## Features
 
@@ -16,7 +17,8 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
 - 📦 [Components auto importing](./views/components)
 - 🌟 [Icons](./views/components) - Access to icons from any iconset directly
-- 🌍 WebExtension - isomorphic extension for Chrome, Firefox, and others
+- 🌍 [I18N ready](views/locales)
+- 🌛 Dark Mode - support toggle dark mode
 - 📃 Dynamic `manifest.json` with full type support
 
 ## Pre-packed
@@ -30,6 +32,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 - [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components) - components auto import
 - [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - WindiCSS support
+- [`@intlify/vite-plugin-vue-i18n`](https://github.com/intlify/bundle-tools/blob/main/packages/vite-plugin-vue-i18n/README.md) - i18n support
 
 ### Vue Plugins
 
@@ -62,7 +65,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-webext/generate).
+[Create a repo from this template on GitHub](https://github.com/xiaoluoboding/vitesse-chrome-extension/generate).
 
 ### Clone to local
 
@@ -71,8 +74,8 @@ If you prefer to do it manually with the cleaner git history
 > If you don't have pnpm installed, run: npm install -g pnpm
 
 ```bash
-npx degit antfu/vitesse-webext my-webext
-cd my-webext
+npx degit xiaoluoboding/vitesse-chrome-extension my-extension
+cd my-extension
 pnpm i
 ```
 
@@ -106,10 +109,8 @@ And then pack files under `extension`.
 
 ## Credits
 
-![](https://user-images.githubusercontent.com/11247099/127029137-6b5ad5db-76c4-4061-86ff-489911a8adfb.png)
+This is a template derive from [antfu/vitesse-webext](https://github.com/antfu/vitesse-webext)
 
-This template is originally made for the [volta.net](https://volta.net) browser extension.
+## License
 
-## Variations
-
-This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variations list](https://github.com/antfu/vitesse#variations).
+  [MIT](./LICENSE) [xiaoluoboding](https://github.com/xiaoluoboding)

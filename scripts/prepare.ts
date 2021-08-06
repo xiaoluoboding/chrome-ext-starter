@@ -2,7 +2,7 @@
 import fs from 'fs-extra'
 import chokidar from 'chokidar'
 import { getManifest } from '../src/manifest'
-import { r, port, isDev, log } from './utils'
+import { r, port, isDev, logger } from './utils'
 
 /**
  * Stub index.html to use Vite in development
@@ -20,13 +20,13 @@ async function stubIndexHtml() {
       .replace('"./main.ts"', `"http://localhost:${port}/${view}/main.ts"`)
       .replace('<div id="app"></div>', '<div id="app">Vite server did not start</div>')
     await fs.writeFile(r(`extension/dist/${view}/index.html`), data, 'utf-8')
-    log('PRE', `stub ${view}`)
+    logger('PRE', `stub ${view}`)
   }
 }
 
 export async function writeManifest() {
   await fs.writeJSON(r('extension/manifest.json'), await getManifest(), { spaces: 2 })
-  log('PRE', 'write manifest.json')
+  logger('PRE', 'write manifest.json')
 }
 
 writeManifest()

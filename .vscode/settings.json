@@ -1,5 +1,4 @@
 {
-  "cSpell.words": ["Vitesse"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "volar.tsPlugin": true,
   "volar.tsPluginStatus": false,
@@ -10,4 +9,8 @@
   "files.associations": {
     "*.css": "postcss",
   },
+  "i18n-ally.localesPaths": [
+    "views/locales"
+  ],
+  "i18n-ally.enabledParsers": ["yaml"]
 }

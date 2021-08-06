@@ -14,7 +14,8 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "vite/client"
+      "vite/client",
+      "chrome"
     ],
     "paths": {
       "~/*": ["views/*"]

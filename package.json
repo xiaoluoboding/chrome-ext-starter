@@ -1,6 +1,6 @@
 {
-  "name": "vitesse-webext",
-  "displayName": "Vitesse WebExt",
+  "name": "vitesse-modernized-chrome-ext",
+  "displayName": "[name]",
   "description": "[description]",
   "version": "0.0.1",
   "private": true,
@@ -8,16 +8,22 @@
     "dev": "run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts dev",
     "dev:web": "vite",
-    "dev:js": "npm run build:js -- --watch src",
+    "dev:js": "npm run bundle:js -- --watch src",
     "build": "run-s clear build:web build:prepare build:js",
     "build:prepare": "esno scripts/prepare.ts build",
     "build:web": "vite build",
-    "build:js": "tsup src/background src/content --format iife --out-dir extension/dist --no-splitting",
-    "clear": "rimraf extension/dist"
+    "build:js": "npm run bundle:js -- --minify",
+    "bundle:js": "tsup src/background src/content --format iife --out-dir extension/dist --no-splitting --onSuccess 'esno scripts/mvsw.ts'",
+    "clear": "rimraf extension/dist extension/background.js"
+  },
+  "dependencies": {
+    "vue-i18n": "^9.1.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.7.0",
     "@iconify/json": "^1.1.379",
+    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
+    "@types/chrome": "^0.0.154",
     "@types/fs-extra": "^9.0.12",
     "@types/node": "^16.4.1",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
