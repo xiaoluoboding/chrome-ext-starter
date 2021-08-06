@@ -65,7 +65,7 @@
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/xiaoluoboding/vitesse-chrome-extension/generate).
+[Create a repo from this template on GitHub](https://github.com/xiaoluoboding/vitesse-modernized-chrome-ext/generate).
 
 ### Clone to local
 
@@ -74,7 +74,7 @@ If you prefer to do it manually with the cleaner git history
 > If you don't have pnpm installed, run: npm install -g pnpm
 
 ```bash
-npx degit xiaoluoboding/vitesse-chrome-extension my-extension
+npx degit xiaoluoboding/vitesse-modernized-chrome-ext my-extension
 cd my-extension
 pnpm i
 ```
