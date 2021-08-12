@@ -111,6 +111,10 @@ And then pack files under `extension`.
 
 This is a template derive from [antfu/vitesse-webext](https://github.com/antfu/vitesse-webext)
 
+## Who is using this template?
+
+* [chrome-web-bookmark](https://github.com/xiaoluoboding/chrome-web-bookmark) - A Chrome extension can turn a link as a visual bookmark.
+
 ## License
 
-  [MIT](./LICENSE) [xiaoluoboding](https://github.com/xiaoluoboding)
+  [MIT](./LICENSE) - [@xiaoluoboding](https://github.com/xiaoluoboding)
