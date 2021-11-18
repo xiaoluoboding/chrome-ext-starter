@@ -19,7 +19,7 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       open_in_tab: true,
     },
     background: {
-      service_worker: 'background.js',
+      service_worker: './dist/background/index.global.js',
     },
     content_scripts: [
       {
