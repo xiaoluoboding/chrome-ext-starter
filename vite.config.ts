@@ -12,12 +12,14 @@ const port = parseInt(process.env.PORT || '') || 3309
 const r = (...args: string[]) => resolve(__dirname, ...args)
 
 export default defineConfig(({ command }) => {
+  const isDev = command === 'serve'
+
   return {
-    root: r('views'),
-    base: command === 'serve' ? `http://localhost:${port}/` : undefined,
+    root: r('src'),
+    base: isDev ? `http://localhost:${port}/` : undefined,
     resolve: {
       alias: {
-        '~/': `${r('views')}/`,
+        '~/': `${r('src')}/`,
       },
     },
     server: {
@@ -27,12 +29,13 @@ export default defineConfig(({ command }) => {
       },
     },
     build: {
-      outDir: r('extension/dist'),
+      outDir: r('extension/prod'),
       emptyOutDir: false,
+      sourcemap: isDev ? 'inline' : false,
       rollupOptions: {
         input: {
-          popup: r('views/popup/index.html'),
-          options: r('views/options/index.html'),
+          popup: r('src/popup/index.html'),
+          options: r('src/options/index.html'),
         },
       },
     },
@@ -40,7 +43,7 @@ export default defineConfig(({ command }) => {
       Vue(),
 
       Components({
-        dirs: [r('views/components')],
+        dirs: [r('src/components')],
         // auto import icons
         resolvers: [
           IconsResolver({
@@ -58,7 +61,7 @@ export default defineConfig(({ command }) => {
 
       // https://github.com/intlify/vite-plugin-vue-i18n
       VueI18n({
-        include: [resolve(__dirname, 'views/locales/**')],
+        include: [resolve(__dirname, 'src/locales/**')],
       }),
 
       // rewrite assets to use relative path

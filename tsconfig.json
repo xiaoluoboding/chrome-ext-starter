@@ -18,7 +18,7 @@
       "chrome"
     ],
     "paths": {
-      "~/*": ["views/*"]
+      "~/*": ["src/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

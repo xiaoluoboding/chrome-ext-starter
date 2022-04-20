@@ -1,6 +1,6 @@
 import type { Manifest } from 'webextension-polyfill-ts'
 import pkg from '../package.json'
-import { isDev, port } from '../scripts/utils'
+import { IS_DEV, PORT } from '../scripts/utils'
 
 export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
   // update this file to update this manifest.json
@@ -12,10 +12,10 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
     description: pkg.description,
     action: {
       default_icon: './assets/icon-512.png',
-      default_popup: './dist/popup/index.html',
+      default_popup: './popup/index.html',
     },
     options_ui: {
-      page: './dist/options/index.html',
+      page: './options/index.html',
       open_in_tab: true,
     },
     background: {
@@ -24,7 +24,7 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
     content_scripts: [
       {
         matches: ['http://*/*', 'https://*/*'],
-        js: ['./dist/content/index.global.js'],
+        js: ['./content/index.global.js'],
       },
     ],
     icons: {
@@ -39,8 +39,8 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
     ],
     // this is required on dev for Vite script to load
     content_security_policy: {
-      extension_pages: isDev
-        ? `script-src \'self\' http://localhost:${port}; object-src \'self\'`
+      extension_pages: IS_DEV
+        ? `script-src \'self\' http://localhost:${PORT}; object-src \'self\'`
         : undefined,
     },
   }
