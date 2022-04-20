@@ -33,7 +33,7 @@ writeManifest()
 
 if (IS_DEV) {
   stubIndexHtml()
-  chokidar.watch(r('views/**/*.html'))
+  chokidar.watch(r('src/**/*.html'))
     .on('change', () => {
       stubIndexHtml()
     })

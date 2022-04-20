@@ -10,7 +10,7 @@
     "*.css": "postcss",
   },
   "i18n-ally.localesPaths": [
-    "views/locales"
+    "src/locales"
   ],
   "i18n-ally.enabledParsers": ["yaml"]
 }

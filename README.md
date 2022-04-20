@@ -15,9 +15,9 @@
 - 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/antfu/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage
 - 🍃 [Windi CSS](https://windicss.org/) - on-demand CSS utilities
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
-- 📦 [Components auto importing](./views/components)
-- 🌟 [Icons](./views/components) - Access to icons from any iconset directly
-- 🌍 [I18N ready](views/locales)
+- 📦 [Components auto importing](./src/components)
+- 🌟 [Icons](./src/components) - Access to icons from any iconset directly
+- 🌍 [I18N ready](src/locales)
 - 🌛 Dark Mode - support toggle dark mode
 - 📃 Dynamic `manifest.json` with full type support
 
@@ -83,8 +83,7 @@ pnpm i
 
 ### Folders
 
-- `views` - frontend for the extension (popup and options).
-- `src` - background scripts and content scripts.
+- `src` - background scripts and content scripts & frontend for the extension (popup and options).
   - `manifest.ts` - manifest for the extension.
 - `extension` - extension package root, also holds assets.
 - `scripts` - development helper scripts.
