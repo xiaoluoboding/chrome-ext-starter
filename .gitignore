@@ -8,5 +8,4 @@ node_modules
 components.d.ts
 .idea/
 *.log
-extension/manifest.json
-extension/background.js
+extension
