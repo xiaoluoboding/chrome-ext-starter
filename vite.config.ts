@@ -1,8 +1,9 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
-import ViteComponents from 'vite-plugin-components'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
 import WindiCSS from 'vite-plugin-windicss'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import windiConfig from './windi.config'
@@ -37,21 +38,18 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       Vue(),
-      ViteComponents({
+
+      Components({
         dirs: [r('views/components')],
-        // generate `components.d.ts` for ts support with Volar
-        globalComponentsDeclaration: true,
         // auto import icons
-        customComponentResolvers: [
-        // https://github.com/antfu/vite-plugin-icons
-          ViteIconsResolver({
-            componentPrefix: '',
+        resolvers: [
+          IconsResolver({
+            prefix: '',
           }),
         ],
       }),
 
-      // https://github.com/antfu/vite-plugin-icons
-      ViteIcons(),
+      Icons(),
 
       // https://github.com/antfu/vite-plugin-windicss
       WindiCSS({
