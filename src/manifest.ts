@@ -5,7 +5,7 @@ import { IS_DEV, PORT } from '../scripts/utils'
 export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
   // update this file to update this manifest.json
   // can also be conditional based on your need
-  const manifest: Manifest.WebExtensionManifest = {
+  return {
     manifest_version: 3,
     name: pkg.displayName || pkg.name,
     version: pkg.version,
@@ -37,27 +37,11 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       'storage',
       'activeTab',
     ],
-  }
-
-  if (IS_DEV) {
-    // if dev set manifest to version 2
-    manifest.manifest_version = 2
-
-    // convert popup extension to manifest v2
-    delete manifest.action
-
-    manifest.browser_action = {
-      default_icon: './assets/icon-512.png',
-      default_popup: './popup/index.html',
-    }
-
-    // convert background to manifest v2
-    delete manifest.background
-    manifest.background = ['background.js']
-
     // this is required on dev for Vite script to load
-    manifest.content_security_policy = `script-src-elem \'self\' http://localhost:${PORT}; object-src \'self\'`
+    content_security_policy: {
+      extension_pages: IS_DEV
+        ? `script-src \'self\' http://localhost:${PORT}; object-src \'self\'`
+        : undefined,
+    },
   }
-
-  return manifest
 }
