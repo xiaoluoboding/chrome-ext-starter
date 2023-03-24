@@ -1,15 +1,29 @@
 <template>
   <nav class="text-xl mt-6">
-    <button class="icon-btn mx-2 !outline-none" :title="$t('button.toggle_dark')" @click="e => toggleDark()">
+    <button
+      class="icon-btn mx-2 !outline-none"
+      :title="$t('button.toggle_dark')"
+      @click="(e) => toggleDark()"
+    >
       <carbon-moon v-if="isDark" />
       <carbon-sun v-else />
     </button>
 
-    <a class="icon-btn mx-2" :title="$t('button.toggle_langs')" @click="toggleLocales">
+    <a
+      class="icon-btn mx-2"
+      :title="$t('button.toggle_langs')"
+      @click="toggleLocales"
+    >
       <carbon-language />
     </a>
 
-    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/xiaoluoboding/vitesse-chrome-extension" target="_blank" title="GitHub">
+    <a
+      class="icon-btn mx-2"
+      rel="noreferrer"
+      href="https://github.com/xiaoluoboding/chrome-ext-mv3-starter"
+      target="_blank"
+      title="GitHub"
+    >
       <carbon-logo-github />
     </a>
   </nav>
