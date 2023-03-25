@@ -2,11 +2,10 @@
 
 > A [Vite](https://vitejs.dev/) Powered `Modernized Chrome Extension Manifest V3` ([Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/)) Starter Template.
 
-
-| Page Type | Light Mode | Dark Mode |
-| :---: | :---: | :---: |
-| Popup Page | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_popup_light.png) | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_popup_dark.png) |
-| Options Page | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_options_light.png) | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/vitesse-modernized-chrome-ext/202107_extpreview_options_dark.png) |
+|  Page Type   |                                                             Light Mode                                                              |                                                             Dark Mode                                                              |
+| :----------: | :---------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|  Popup Page  |  ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/chrome-ext-mv3-starter/202107_extpreview_popup_light.png)  |  ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/chrome-ext-mv3-starter/202107_extpreview_popup_dark.png)  |
+| Options Page | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/chrome-ext-mv3-starter/202107_extpreview_options_light.png) | ![](https://cdn.jsdelivr.net/gh/xiaoluoboding/image-hub-for-repo@latest/chrome-ext-mv3-starter/202107_extpreview_options_dark.png) |
 
 ## Features
 
@@ -65,7 +64,7 @@
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/xiaoluoboding/vitesse-modernized-chrome-ext/generate).
+[Create a repo from this template on GitHub](https://github.com/xiaoluoboding/chrome-ext-mv3-starter/generate).
 
 ### Clone to local
 
@@ -74,7 +73,7 @@ If you prefer to do it manually with the cleaner git history
 > If you don't have pnpm installed, run: npm install -g pnpm
 
 ```bash
-npx degit xiaoluoboding/vitesse-modernized-chrome-ext my-extension
+npx degit xiaoluoboding/chrome-ext-mv3-starter my-extension
 cd my-extension
 pnpm i
 ```
@@ -112,8 +111,8 @@ This is a template derive from [antfu/vitesse-webext](https://github.com/antfu/v
 
 ## Who is using this template?
 
-* [chrome-web-bookmark](https://github.com/xiaoluoboding/chrome-web-bookmark) - A Chrome extension can turn a link as a visual bookmark.
+- [chrome-web-bookmark](https://github.com/xiaoluoboding/chrome-web-bookmark) - A Chrome extension can turn a link as a visual bookmark.
 
 ## License
 
-  [MIT](./LICENSE) - [@xiaoluoboding](https://github.com/xiaoluoboding)
+[MIT](./LICENSE) - [@xiaoluoboding](https://github.com/xiaoluoboding)
